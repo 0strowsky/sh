@@ -23,7 +23,7 @@
 /vendor/
 
 # Assets and user uploads
-/web/bundles/
+
 /web/uploads/
 
 # PHPUnit
@@ -34,7 +34,7 @@
 /build/
 
 # Composer PHAR
-/composer.phar
+
 
 # =========================
 # Operating System Files
