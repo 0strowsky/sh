@@ -4,3 +4,6 @@ shop_homepage:
 category:
     path: /category/{slug}
     defaults: { _controller: ShopBundle:Category:index }
+products:
+    path: /products/{slug}
+    defaults: { _controller: ShopBundle:Products:index }
