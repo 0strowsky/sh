@@ -82,4 +82,6 @@ payum:
 
     storages:
             ShopBundle\Entity\Payment: { doctrine: orm }
-
+    gateways:
+        offline:
+            offline: ~

@@ -3,6 +3,10 @@
 namespace ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Payum\Core\Request\GetHumanStatus;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 class PaymentController extends Controller 
 {
     public function prepareAction(){
@@ -12,7 +16,7 @@ class PaymentController extends Controller
 
         $payment = $storage->create();
         $payment->setNumber(uniqid());
-        $payment->setCurrencyCode('EUR');
+        $payment->setCurrencyCode('PLN');
         $payment->setTotalAmount(123); // 1.23 EUR
         $payment->setDescription('A description');
         $payment->setClientId('anId');
