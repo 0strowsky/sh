@@ -16,3 +16,7 @@ payum_authorize:
 
 payum_notify:
     resource: "@PayumBundle/Resources/config/routing/notify.xml"
+
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin

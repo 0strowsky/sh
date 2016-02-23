@@ -79,9 +79,8 @@ hr {
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
 }
-#content {
+#content{
 	width:1200px;
-	height:800px;
 	margin:70px auto;
 }
 #content div {
@@ -116,12 +115,5 @@ footer div{
 #categories {
 width:180px;
 height:30px;
-background:#B81D22;
-border-radius:2px;
-}
-h2 {
-	margin-left:20%;
-}
-#productsColumn {
-	height:250px;
+background:red;
 }
