@@ -1,4 +1,11 @@
 {% extends '::base.html.twig' %}
 {% block content %}
-{{ products[0].name }}
+
+{% set prodid = app.request.attributes.get('slug') -1 %}
+{% set arrayval = products[prodid].id %}
+
+{{ arrayval }}
+<img src="{{ products[prodid].img }}">
+{{ products[prodid].description }}
+
 {% endblock %}
