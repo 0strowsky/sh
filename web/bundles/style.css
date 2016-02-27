@@ -27,7 +27,7 @@ body {
 	border-left:1px dotted #CCC;
 }
 .rightNav li a {
-	font-size: 0.9em;
+	font-size: 0.9em; 
 	color: #9C9C9C;
 	padding:0 10px;
 }
@@ -89,12 +89,13 @@ hr {
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
 }
-#content{
+.content{
+	margin: 0 auto; 
 	width:1200px;
 	height:800px;
 	
 }
-#content div {
+.content div {
 	display:table-cell;
 }
 footer {
@@ -115,9 +116,11 @@ footer div{
 #category {
 	width:200px;
 	float:left;
+	background:red;
 }
 #category li {
 	list-style:none;
+	margin-top:5px;
 }
 #slider {
 	width:1000px;
@@ -126,11 +129,15 @@ footer div{
 #categories {
 width:180px;
 height:30px;
-
 border-radius:2px;
 }
 h2 {
 	margin-left:20%;
+}
+#menu-panel {
+	background-color:#0687A7;
+	height:56px;
+	width:100%;
 }
 
 /*-- -------------belka logowania----------------- --> */
@@ -192,7 +199,7 @@ float: right;
     right: 0;
 }
  
-#panel #content {
+#panel .content {
     width: 240px;
     height: 400px;
     padding: 10px;
@@ -231,3 +238,21 @@ background-color: #131313;
 background-position: center bottom;
 height: 350px;
 }
+#fos_user_registration_form{
+	display:table;
+}
+label {
+	display:table;
+	color:white;
+}
+.content form {
+	margin:0 auto;
+	display:table-caption;
+}
+.fos-forms {
+	height:600px;
+	width:800px;
+	padding-left:40%;
+	padding-top:10%;
+}
+/* ********** media queries */

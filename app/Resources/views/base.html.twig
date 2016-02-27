@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -11,123 +12,97 @@
     </head>
     <body>
     <div id="belka">
-    <div id="belka_wnetrze">
-      
-        <div id="belka_wnetrze_lewa" class="col-md-6 hidden-xs hidden-sm">
-        <strong><a href="http://holyshit.pl">HolyShit.pl</a></strong>, 
-        tu będzie data
-        <a href="/sh/web/app_dev.php">Homepage</a>
-        </div>
-     
-     <div id="belka_wnetrze_lewa" class="col-md-6 visible-xs visible-sm">
+        <div id="belka_wnetrze">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <img src="http://portal.holyshit.pl/images/header/hero1.png" style="display:none;">
+            <div id="belka_wnetrze_lewa" class="col-md-6 hidden-xs hidden-sm">
+            <strong><a href="http://holyshit.pl">HolyShit.pl</a></strong>, 
+            tu będzie data
+            <a href="/sh/web/app_dev.php">Homepage</a>
+            </div>
+         
+             <div id="belka_wnetrze_lewa" class="col-md-6 visible-xs visible-sm">
 
-<a href="http://holyshit.pl/index.php?app=core&module=usercp">
-<img src="http://portal.holyshit.pl/images/ikonki/autor.png" width="13px"/> 
-Panel użytkownika</a>&nbsp;&nbsp; | &nbsp;&nbsp;
-<a href="http://holyshit.pl/index.php?app=core&module=help">
-<img src="http://portal.holyshit.pl/images/ikonki/pomoc.png" width="12px"/>
-Pomoc</a>&nbsp;&nbsp; | &nbsp;&nbsp;
-<a href="http://holyshit.pl/index.php?showforum=255">
-<img src="http://portal.holyshit.pl/images/ikonki/regulamin.png" width="12px"/>
-Regulaminy</a>
-        </div>
-     
-        <div id="belka_wnetrze_prawa" class="col-md-6 hidden-xs hidden-sm">
+                <a href="http://holyshit.pl/index.php?app=core&module=usercp">
+                <img src="http://portal.holyshit.pl/images/ikonki/autor.png" width="13px"/> 
+                Panel użytkownika</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                <a href="http://holyshit.pl/index.php?app=core&module=help">
+                <img src="http://portal.holyshit.pl/images/ikonki/pomoc.png" width="12px"/>
+                Pomoc</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                <a href="http://holyshit.pl/index.php?showforum=255">
+                <img src="http://portal.holyshit.pl/images/ikonki/regulamin.png" width="12px"/>
+                Regulaminy</a>
+            </div>
+                     
+            <div id="belka_wnetrze_prawa" class="col-md-6 hidden-xs hidden-sm">
 
-<a href="http://holyshit.pl/index.php?app=core&module=usercp">
-<img src="http://portal.holyshit.pl/images/ikonki/autor.png" width="13px"/> 
-Panel użytkownika</a>&nbsp;&nbsp; | &nbsp;&nbsp;
-<a href="http://holyshit.pl/index.php?app=core&module=help">
-<img src="http://portal.holyshit.pl/images/ikonki/pomoc.png" width="12px"/>
-Pomoc</a>&nbsp;&nbsp; | &nbsp;&nbsp;
-<a href="http://holyshit.pl/index.php?showforum=255">
-<img src="http://portal.holyshit.pl/images/ikonki/regulamin.png" width="12px"/>
-Regulaminy</a>
- <ul id="navList">
-                    {% if app.user %}
-                    <li><a href="/sh/web/app_dev.php/profile">Moje konto</a></li>
-                    {% else %}     
-                    <li><a href="/sh/web/app_dev.php/register">Zarejestruj się</a></li>
-                    <li><a href="/sh/web/app_dev.php/login">Zaloguj się</a></li>
-                    
-                    {% endif %}
-                </ul>
+                <a href="http://holyshit.pl/index.php?app=core&module=usercp">
+                <img src="http://portal.holyshit.pl/images/ikonki/autor.png" width="13px"/> 
+                Panel użytkownika</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                <a href="http://holyshit.pl/index.php?app=core&module=help">
+                <img src="http://portal.holyshit.pl/images/ikonki/pomoc.png" width="12px"/>
+                Pomoc</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                <a href="http://holyshit.pl/index.php?showforum=255">
+                <img src="http://portal.holyshit.pl/images/ikonki/regulamin.png" width="12px"/>
+                Regulaminy</a>
+                                    {% if app.user %}
+                                    <a href="/sh/web/app_dev.php/profile">|&nbsp;Moje konto</a>
+                                    {% else %}     
+                                    <a href="/sh/web/app_dev.php/register">|&nbsp;Zarejestruj się</a>
+                                    <a href="/sh/web/app_dev.php/login">|&nbsp;Zaloguj</a>
+                                    {% endif %}                            
+            </div>
+            <div style=clear:both></div>
         </div>
-    <div style=clear:both></div>
-    </div>
-</div>  
-  </div></div>
+    </div>  
+ 
   
   
-<div id="panel">
+    <div id="panel">
  
-    <div id="title" class="visible-md visible-lg">
-        GRUPY HOLYSHIT
-    </div>
+        <div id="title" class="visible-md visible-lg">GRUPY HOLYSHIT</div>
      
-    <div id="content">
-<a href="http://holyshit.pl"><i class="fa fa-arrow-left"></i> Przejdź do Forum Holyshit</a>
-<hr />
-<a href="https://www.facebook.com/HolyShitpl?fref=ts"><i class="fa fa-facebook-square"></i> Oficjalne FB HolyShit.pl</a><br>
-<a href="https://www.facebook.com/groups/loltylkodla18/?fref=ts"><i class="fa fa-facebook-square"></i> Grupa zamknięta FB LOL +18</a><br>
-<a href="https://www.facebook.com/groups/cstylkodla18/?fref=ts"><i class="fa fa-facebook-square"></i> Grupa zamknięta FB CS +18</a><br>
-<a href="https://twitter.com/HolyShitPL"><i class="fa fa-twitter-square"></i> Oficjalny Twitter HolyShit.pl</a><br>
-<a href="https://steamcommunity.com/groups/hspl"><i class="fa fa-steam-square"></i> Oficjalna Grupa Steam</a>
-<hr />
-<a href="ts3server://185.49.12.11:9987"><img src="http://portal.holyshit.pl/images/click_teamspeak.png"/></a>
-</div>
- 
-</div>
+        <div class="content">
+            <a href="http://holyshit.pl"><i class="fa fa-arrow-left"></i> Przejdź do Forum Holyshit</a>
+            <hr />
+            <a href="https://www.facebook.com/HolyShitpl?fref=ts"><i class="fa fa-facebook-square"></i> Oficjalne FB HolyShit.pl</a><br>
+            <a href="https://www.facebook.com/groups/loltylkodla18/?fref=ts"><i class="fa fa-facebook-square"></i> Grupa zamknięta FB LOL +18</a><br>
+            <a href="https://www.facebook.com/groups/cstylkodla18/?fref=ts"><i class="fa fa-facebook-square"></i> Grupa zamknięta FB CS +18</a><br>
+            <a href="https://twitter.com/HolyShitPL"><i class="fa fa-twitter-square"></i> Oficjalny Twitter HolyShit.pl</a><br>
+            <a href="https://steamcommunity.com/groups/hspl"><i class="fa fa-steam-square"></i> Oficjalna Grupa Steam</a>
+            <hr />
+            <a href="ts3server://185.49.12.11:9987"><img src="http://portal.holyshit.pl/images/click_teamspeak.png"/></a>
+        </div>
+
+    </div>
         <header id="masthead" class="site-header" role="banner">
-        <div class="ig_container" style="background-image:url('http://portal.holyshit.pl/images/background-lol.jpg');background-repeat: no-repeat;background-position: center center;background-attachment: fixed;"> 
-<div id="content" class="clearfix" style="padding: 0px 10px;">
-<div class="row" style="padding-left:25%;"> 
-            <div class="col-md-6" style="float:left;margin-left:30px;margin-top:40px;margin-right:25px">
-                <div class="site-branding">
-                    
-                  <a href="http://portal.holyshit.pl"><img src="http://portal.holyshit.pl/images/identyfikacja-wizualna/holy-logo-cien.png" style="width: 75%; max-width: 540px;padding-top:5%;"></a>
-<br>
-  <a href="http://imperiumgracza.pl"><img src="http://portal.holyshit.pl/images/identyfikacja-wizualna/imperiumgracza-mini.png" style="width: 55%; float: left;"/></a>
-
-
+        <div class="ig_container" style="background-image:url('http://portal.holyshit.pl/images/background-lol.jpg');background-repeat: no-repeat;background-position: center center;background-attachment:fixed;"> 
+<div class="content" class="clearfix" style="padding: 0px 10px;">
+<div class="row"> 
+            <div class="col-md-6">
+                <div class="site-branding">      
+                    <h1><a href="http://portal.holyshit.pl"><img src="http://portal.holyshit.pl/images/identyfikacja-wizualna/holy-logo-cien.png" style="width: 75%; max-width: 540px;padding-top:5%;"></a></h1>
+                    <br>
+                     <a href="http://imperiumgracza.pl"><img src="http://portal.holyshit.pl/images/identyfikacja-wizualna/imperiumgracza-mini.png" style="width: 55%; float: left;"/></a>
                 </div>
             </div>
-            <div class="col-md-5" style="float: left;">
-                
-<script type="text/javascript" language="JavaScript">
-<!--
-var elementy = new Array(
-
-// Tu wpisz kolejne elementy:
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero1.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero2.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero3.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero4.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero5.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero6.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero7.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero8.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero9.png" style="height: 270px;">',
-'<IMG SRC="http://portal.holyshit.pl/images/header/hero10.png" style="height: 270px;">'
-);
-
-var liczba = 0;
-do { liczba = Math.random(); } while (liczba >= 1);
-liczba = Math.floor(liczba * elementy.length);
-
-document.write(elementy[liczba]);
-//-->
-
-
-
-</script>
-                
+            <div class="col-md-5 hidden-xs hidden-sm" id="hero" style="float: left;">
             </div><div style="clear:both"></div>
-        </div></div></div>
+        </div>
     </header>
 
         <div style="clear:both"></div>
-        <section id="content">
+        <div id="menu-panel">
+        </div>
+        <section class="content">
             <div id="category">
                 <div id="categories">
                     KATEGORIE
