@@ -7,3 +7,9 @@ category:
 products:
     path: /products/{slug}
     defaults: { _controller: ShopBundle:Products:index }
+buyit:
+    path: /buyit
+    defaults: { _controller: ShopBundle:Payment:prepare }
+done:
+    path: /paymentdone
+    defaults: { _controller: ShopBundle:Payment:done }

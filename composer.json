@@ -21,12 +21,20 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "payum/offline": "^1.2",
+        "payum/payum-bundle": "^1.2",
+        "sensio/generator-bundle": "^3.0",
+        "doctrine/phpcr-bundle": "~1.2",
+        "doctrine/phpcr-odm": "~1.2",
+        "jackalope/jackalope-doctrine-dbal": "~1.1,>=1.1.2",
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
     },
     "require-dev": {
-        "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^2.7",
-        "doctrine/doctrine-fixtures-bundle": "^2.3"
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "jackalope/jackalope-jackrabbit": "~1.0"
     },
     "scripts": {
         "post-install-cmd": [

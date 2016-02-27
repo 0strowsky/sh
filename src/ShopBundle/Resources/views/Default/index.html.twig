@@ -2,7 +2,7 @@
 {% block content %}
 {% endblock %}
 {% block slider %}
-<img style="border-radius:4px;" src="{{ asset('slider.png') }}"/>
+<img style="border-radius:4px;" class="hidden-xs" src="{{ asset('slider.png') }}"/>
 {% endblock %}
 {% block categories %}
 {% for categories in categories %}
@@ -17,7 +17,7 @@
 <div class="row">
 {% for categories in categories %}
 <div class="col-md-3">
-<a href="/sh/web/app_dev.php/products/{{ categories.name }}">
+<a href="/sh/web/app_dev.php/products/{{ categories.id }}">
 {{ categories.name }}
 
 <img src="{{categories.img}}" style="width:150px">
