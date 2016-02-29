@@ -30,7 +30,7 @@ body {
 	}
 
 	#lewa-gora{background-color: #0687A7;}
-	#lewa-dol{background-color: #F9BA16;}
+	#lewa-dol{background-color: #0687A7; padding-top: 30px;}
 	
 	#prawa{}
 		#prawap{font-size: 1.2em; text-align: justify; text-justify: inter-word;}
