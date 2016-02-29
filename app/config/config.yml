@@ -10,7 +10,7 @@ parameters:
     locale: en
 
 framework:
-    #esi:             ~
+    #esi:             PL
     translator:      { fallbacks: [en] }
     secret:          "%secret%"
     router:

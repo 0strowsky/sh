@@ -29,7 +29,8 @@
         "doctrine/phpcr-odm": "~1.2",
         "jackalope/jackalope-doctrine-dbal": "~1.1,>=1.1.2",
         "sonata-project/admin-bundle": "dev-master",
-        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "pixers/payum-dotpay": "^1.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^2.7",
