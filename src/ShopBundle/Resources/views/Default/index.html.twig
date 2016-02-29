@@ -7,7 +7,7 @@
 {% block categories %}
 {% for categories in categories %}
 {% set var = categories.category %}
-<li><a href="/sh/web/app_dev.php/category/{{ var|lower }}">{{ categories.category }}</a></li>
+<li><a href="/sh/web/app_dev.php/category/{{ var|lower }}"><i class="fa fa-angle-double-right"></i> {{ categories.category }}</a></li>
 {% endfor %}
 
 {% endblock %}

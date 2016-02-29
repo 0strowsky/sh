@@ -105,7 +105,7 @@
         
 		 <div class="container">
 		<div class="row">
-		<div class="col-md-12">
+		<div id="caly-blok" class="col-md-12">
 		<div class="col-md-4">
 				<div id="lewa-gora">
 					<div id="cssmenu">
@@ -118,31 +118,39 @@
 				<div id="lewa-dol">
 				<sidebar>
 				{% block sidebar %}{% endblock %}
-				</sidebar>fghfgh
+				</sidebar>
 				</div>
 		</div>
 
 		<div class="col-md-8">
+		<div id="prawa">
 		
         {% block slider %}{% endblock %}
         {% block content %}{% endblock %}
 		
 		</div>
         </div>
+		</div>
 		
 	
-        <section id="productsColumn" class="col-md-12">
-        <h2>Najnowsze produkty</h2>
+        <section id="caly-blok-stopka" class="col-md-12">
         {% block products %}{% endblock %}
         </section>
-        <footer>
-        footer
-        </footer>
 		
         {% block javascripts %}{% endblock %}
 		
 		</div>
 		</div>
+		
+		<div id="blok_stopka" class="col-md-12">
+		</div>
+
+		<div id="stopka" class="col-md-12">
+		<div style="margin-left: 14%; margin-top: 2%;margin-bottom:2%;">
+		Copyright © 2016 Holyshit.pl - Portal dla graczy CS:GO, LOL, Space Engineers, Teamfortress oraz Minecraft!. Wszelkie prawa zastrzeżone. 
+		</div>
+		</div>
+
 		
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
