@@ -6,6 +6,37 @@
 body {
 	background:#1b1b1b url(http://holyshit.pl/public/style_images/Chestnut/tlo.png) repeat top;
 }
+
+	#caly-blok
+	{background-color: #1A1A1A; 
+	border: 4px solid #3F3F3F; 
+	max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px 0px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+	}
+	
+	#caly-blok-stopka
+	{background-color: #1A1A1A; 
+	border: 4px solid #3F3F3F; 
+	max-width: 1200px;
+    margin: 0px auto;
+    padding: 30px 0px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+	}
+
+	#lewa-gora{background-color: #0687A7;}
+	#lewa-dol{background-color: #0687A7; padding-top: 30px;}
+	
+	#prawa{}
+		#prawap{font-size: 1.2em; text-align: justify; text-justify: inter-word;}
+
+	#stopka{background-color: #2A2B2C; color: #fff;}
+
 #masthead{
 	height:270px;
 }
@@ -236,6 +267,7 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 background-color: #131313; 
 background-position: center bottom;
+margin-top: 50px;
 height: 350px;
 }
 #fos_user_registration_form{
@@ -256,3 +288,118 @@ label {
 	padding-top:10%;
 }
 /* ********** media queries */
+
+/* MENU */	
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu {
+
+  font-family: Raleway, sans-serif;
+  color: #ffffff;
+}
+#cssmenu ul ul {
+  display: none;
+}
+#cssmenu > ul > li.active > ul {
+  display: block;
+}
+.align-right {
+  float: right;
+}
+#cssmenu > ul > li > a {
+  padding: 12px 22px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#cssmenu > ul > li > a:hover {
+  color: #fff;
+  background-color: #222222;
+}
+#cssmenu ul > li.has-sub > a:after {
+  position: absolute;
+  right: 26px;
+  top: 19px;
+  z-index: 5;
+  display: block;
+  height: 10px;
+  width: 2px;
+  background: #ffffff;
+  content: "";
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+#cssmenu ul > li.has-sub > a:before {
+  position: absolute;
+  right: 22px;
+  top: 23px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  background: #ffffff;
+  content: "";
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+#cssmenu ul > li.has-sub.open > a:after,
+#cssmenu ul > li.has-sub.open > a:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#cssmenu ul ul li a {
+  padding: 14px 22px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #dddddd;
+  background: #49505a;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#cssmenu ul ul ul li a {
+  padding-left: 32px;
+}
+#cssmenu ul ul li a:hover {
+  color: #ffffff;
+  background-color: #434951;
+}
+#cssmenu ul ul > li.has-sub > a:after {
+  top: 16px;
+  right: 26px;
+  background: #dddddd;
+}
+#cssmenu ul ul > li.has-sub > a:before {
+  top: 20px;
+  background: #dddddd;
+}
