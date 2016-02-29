@@ -102,38 +102,51 @@
         <div style="clear:both"></div>
         <div id="menu-panel">
         </div>
-        <section class="content">
-            <div id="category">
-                <div id="categories">
-                    KATEGORIE
-                </div>            
-            <ul id="categoryList">
-                {% block categories %}{% endblock %}
-            </ul>   
-            </div>
-            <div id="slider">{% block slider %}{% endblock %}
-            </div>
-            {% block content %}{% endblock %}     
-        </section>
-        <sidebar>
-            {% block sidebar %}{% endblock %}
-        </sidebar>
-        <section id="productsColumn">
+        
+		 <div class="container">
+		<div class="row">
+		<div class="col-md-12">
+		<div class="col-md-4">
+				<div id="lewa-gora">
+					<div id="cssmenu">
+						<ul id="categoryList">
+							{% block categories %}{% endblock %}
+						 </ul>
+	 
+					</div>
+				</div>
+				<div id="lewa-dol">
+				<sidebar>
+				{% block sidebar %}{% endblock %}
+				</sidebar>fghfgh
+				</div>
+		</div>
+
+		<div class="col-md-8">
+		
+        {% block slider %}{% endblock %}
+        {% block content %}{% endblock %}
+		
+		</div>
+        </div>
+		
+	
+        <section id="productsColumn" class="col-md-12">
         <h2>Najnowsze produkty</h2>
         {% block products %}{% endblock %}
         </section>
         <footer>
-            <div id="footerColumn">
-                <div>footer1</div>
-                <div>footer2</div>
-                <div>footer3</div>
-                <div>footer4</div>
-
-            </div>
+        footer
         </footer>
+		
         {% block javascripts %}{% endblock %}
+		
+		</div>
+		</div>
+		
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="{{ asset('homepage.js') }}"</script>
+		
     </body>
 </html>
