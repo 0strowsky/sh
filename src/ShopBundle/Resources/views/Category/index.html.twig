@@ -2,15 +2,25 @@
 
 
 {% block content %}
+<div class="container">
+<div class="row">
 {% for categories in categories %}
-{% set var = categories.category %}
-<h2>{{ var }}</h2>
+<div class="col-md-3">
+<a href="/sh/web/app_dev.php/products/{{ categories.id }}">
+{{ categories.display_name }}
+
+<img src="{{categories.img_min}}" style="width:150px">
+</a></div>
 {% endfor %}
+</div></div>
+
 {% endblock %}
 
 {% block categories %}
-{% for categories in categories %}
-{% set var = categories.category %}
-<li><a href="/sh/web/app_dev.php/category/{{ var|lower }}">{{ categories.category }}</a></li>
+{% for categories2 in categories2 %}
+{% set var = categories2.category %}
+<li><a href="/sh/web/app_dev.php/category/{{ var|lower }}">{{ categories2.category }}</a></li>
 {% endfor %}
 {% endblock %}
+
+

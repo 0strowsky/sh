@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 {% block content %}
 
-{% set prodid = app.request.attributes.get('slug') -1 %}
+{% set prodid = app.request.attributes.get('slug') -25 %}
 {% set arrayval = products[prodid].id %}
 	
 {% if products|length > prodid %}
