@@ -13,3 +13,6 @@ buyit:
 done:
     path: /paymentdone
     defaults: { _controller: ShopBundle:Payment:done }
+orders:
+    path: /products/{slug}/order
+    defaults: { _controller: ShopBundle:Orders:new }
