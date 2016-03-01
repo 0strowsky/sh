@@ -19,9 +19,9 @@
 {% for categories in categories %}
 <div class="col-md-3">
 <a href="/sh/web/app_dev.php/products/{{ categories.id }}">
-{{ categories.name }}
+{{ categories.display_name }}
 
-<img src="{{categories.img}}" style="width:150px">
+<img src="{{categories.img_min}}" style="width:150px">
 </a></div>
 {% endfor %}
 </div></div>

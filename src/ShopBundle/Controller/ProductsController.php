@@ -15,7 +15,7 @@ class ProductsController extends Controller
    {	$request = Request::createFromGlobals();
    		$request->getUri();
    		$em = $this->getDoctrine()->getManager();
-   		$query = $em->createQuery('SELECT DISTINCT a.id, a.category, a.name, a.quantity, a.img, a.description FROM ShopBundle:Products a');
+   		$query = $em->createQuery('SELECT DISTINCT a.id, a.category, a.name, a.price, a.img, a.description FROM ShopBundle:Products a');
    		$products = $query->getResult();
    		$params = $this->get('router')->match('/products/lenovo_y580');
    		$uri = $this->get('router')->generate('products', array(
