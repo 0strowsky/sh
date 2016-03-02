@@ -12,14 +12,12 @@ class ProductsController extends Controller
 { 
 
    public function indexAction($slug)
-   {	$request = Request::createFromGlobals();
+   {	 $request = Request::createFromGlobals();
    		$request->getUri();
    		$em = $this->getDoctrine()->getManager();
-   		$query = $em->createQuery('SELECT DISTINCT a.id, a.category, a.name, a.price, a.img, a.description FROM ShopBundle:Products a');
+   		$query = $em->createQuery('SELECT DISTINCT a.id, a.category, a.name, a.price, a.img, a.description FROM ShopBundle:Products a WHERE a.name = :name')->setParameter('name', $slug);
    		$products = $query->getResult();
-   		$params = $this->get('router')->match('/products/lenovo_y580');
-   		$uri = $this->get('router')->generate('products', array(
-   			'slug' => 'lenovo_y580'));
-  		return $this->render('ShopBundle:Products:index.html.twig', array('products' => $products, 'request' => $request));
+   		
+  		return $this->render('ShopBundle:Products:index.html.twig', array('slug' => $slug, 'products' => $products, 'request' => $request));
    }
 }

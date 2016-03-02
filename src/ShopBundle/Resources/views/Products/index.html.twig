@@ -1,16 +1,4 @@
 {% extends '::base.html.twig' %}
 {% block content %}
-
-{% set prodid = app.request.attributes.get('slug') -25 %}
-{% set arrayval = products[prodid].id %}
-	
-{% if products|length > prodid %}
-rak
-{% else %}
-chuj
-{% endif %}
-{{ arrayval }}
-<img src="{{ products[prodid].img }}">
-{{ products[prodid].description }}
-<a href="{{ prodid +1 }}/order">Zamów!</a>
+{{ products[0].name }}
 {% endblock %}
