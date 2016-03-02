@@ -42,6 +42,14 @@ class Products
      */
     private $category;
 
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="categorypath", type="string", length=255)
+     */
+    private $categorypath;
+
+
     /**
      * @var string
      *
@@ -276,6 +284,28 @@ class Products
     {
         return $this->img_min;
     }
+        /**
+     * Set categorypath
+     *
+     * @param string $categorypath
+     *
+     * @return Products
+     */
+    public function setCategorypath($categorypath)
+    {
+        $this->categorypath = $categorypath;
 
+        return $this;
+    }
+
+    /**
+     * Get categorypath
+     *
+     * @return string
+     */
+    public function getCategorypath()
+    {
+        return $this->categorypath;
+    }
 
 }

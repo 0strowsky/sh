@@ -1,5 +1,11 @@
 {% extends '::base.html.twig' %}
+{% block categories %}
+{% for categories2 in categories2 %}
+{% set var = categories2.categorypath %}
+<li><a href="/sh/web/app_dev.php/category/{{ var }}"><i class="fa fa-angle-double-right"></i> {{ categories2.categorypath }}</a></li>
+{% endfor %}
 
+{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -16,11 +22,6 @@
 
 {% endblock %}
 
-{% block categories %}
-{% for categories2 in categories2 %}
-{% set var = categories2.category %}
-<li><a href="/sh/web/app_dev.php/category/{{ var|lower }}">{{ categories2.category }}</a></li>
-{% endfor %}
-{% endblock %}
+
 
 

@@ -2,3 +2,10 @@
 {% block content %}
 {{ products[0].name }}
 {% endblock %}
+{% block categories %}
+{% for categories2 in categories2 %}
+{% set var = categories2.categorypath %}
+<li><a href="/sh/web/app_dev.php/category/{{ var }}"><i class="fa fa-angle-double-right"></i> {{ categories2.category }}</a></li>
+{% endfor %}
+
+{% endblock %}
