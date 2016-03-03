@@ -1,6 +1,8 @@
 {% extends '::base.html.twig' %}
 {% block content %}
 {{ products[0].name }}
+<a href="{{ products[0].name }}/ordersmints">ZAMÓW MINTSHOSTEM</a><br>
+<a href="{{ products[0].name }}/orders">ZAMÓW PRZELEWEM</a>
 {% endblock %}
 {% block categories %}
 {% for categories2 in categories2 %}

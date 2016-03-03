@@ -16,3 +16,6 @@ done:
 orders:
     path: /products/{slug}/order
     defaults: { _controller: ShopBundle:Orders:new }
+ordersmints:
+    path: /products/{slug}/ordersmints
+    defaults: { _controller: ShopBundle:Ordersmints:new }

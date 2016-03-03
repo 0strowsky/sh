@@ -29,12 +29,14 @@ class Orders
     private $userId;
 
     /**
-     * @var string
+     * @var datetime
      *
-     * @ORM\Column(name="date", type="string", length=255)
+     * @ORM\Column(name="date", type="datetime", length=255)
      */
     private $date;
 
+
+    protected $dueDate;
 
     /**
      * Get id
