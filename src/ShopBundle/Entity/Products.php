@@ -85,6 +85,13 @@ class Products
     private $img_min;
 
     /**
+    * @var string
+    * @ORM\Column(name="mother", type="string", length=255) 
+    */
+    private $mother;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -307,5 +314,30 @@ class Products
     {
         return $this->categorypath;
     }
+
+    /**
+     * Set mother
+     *
+     * @param string $mother
+     *
+     * @return Products
+     */
+    public function setMother($mother)
+    {
+        $this->mother = $mother;
+
+        return $this;
+    }
+
+    /**
+     * Get mother
+     *
+     * @return string
+     */
+    public function getMother()
+    {
+        return $this->mother;
+    }
+
 
 }
