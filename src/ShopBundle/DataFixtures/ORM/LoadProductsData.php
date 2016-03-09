@@ -19,6 +19,7 @@ class LoadProductsData implements FixtureInterface
         $product->setDisplayName('Rezerwacja slota przez 25dni');
         $product->setDuration(25);
         $product->setCategorypath('csgo_arena');
+        $product->setPhonenumber('7636');
  
         $product1 = new Products();
         $product1->setName('vip');
@@ -30,6 +31,7 @@ class LoadProductsData implements FixtureInterface
         $product1->setDisplayName('Usługa VIP przez 12dni');
         $product1->setDuration(12);
         $product1->setCategorypath('csgo_arena');
+        $product1->setPhonenumber('7636');
 
         $product2 = new Products();
         $product2->setName('vip_monthly');
@@ -41,6 +43,7 @@ class LoadProductsData implements FixtureInterface
         $product2->setDisplayName('Usługa VIP + Rezerwacja slota przez 25dni');
         $product2->setDuration(25);
         $product2->setCategorypath('csgo_arena');
+        $product2->setPhonenumber('91455');
 
         $product3 = new Products();
         $product3->setName('double_jump');
@@ -52,6 +55,7 @@ class LoadProductsData implements FixtureInterface
         $product3->setDisplayName('Podwójny skok przez 25dni');
         $product3->setDuration(25);
         $product3->setCategorypath('csgo_arena');
+        $product3->setPhonenumber('7636');
 
         $manager->persist($product);
         $manager->persist($product1);

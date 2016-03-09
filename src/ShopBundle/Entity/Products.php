@@ -85,6 +85,12 @@ class Products
     private $img_min;
 
     /**
+    * @var string
+    * @ORM\Column(name="phonenumber", type="string", length=255)
+    */
+    private $phonenumber;
+
+    /**
      * Get id
      *
      * @return int
@@ -306,6 +312,29 @@ class Products
     public function getCategorypath()
     {
         return $this->categorypath;
+    }
+      /**
+     * Set phonenumber
+     *
+     * @param string $phonenumber
+     *
+     * @return Products
+     */
+    public function setPhonenumber($phonenumber)
+    {
+        $this->phonenumber = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phonenumber
+     *
+     * @return string
+     */
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
     }
 
 }
