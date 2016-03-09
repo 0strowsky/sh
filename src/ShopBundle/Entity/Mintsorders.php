@@ -33,7 +33,7 @@ class Mintsorders
      *
      * @ORM\Column(name="numer", type="string", length=255)
      */
-    private $numer;
+    public $numer;
 
     /**
      * @var string
@@ -45,7 +45,7 @@ class Mintsorders
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="date", type="string", length=255)
      */
     private $date;
 

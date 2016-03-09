@@ -19,3 +19,6 @@ orders:
 ordersmints:
     path: /products/{slug}/ordersmints
     defaults: { _controller: ShopBundle:Ordersmints:new }
+mintsthanks:
+    path: /mintsthanks
+    defaults: { _controller: ShopBundle:Mintsthanks:new }
