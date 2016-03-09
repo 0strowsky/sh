@@ -17,8 +17,11 @@ orders:
     path: /products/{slug}/order
     defaults: { _controller: ShopBundle:Orders:new }
 ordersmints:
-    path: /products/{slug}/ordersmints
+    path: /ordersmints
     defaults: { _controller: ShopBundle:Ordersmints:new }
 mintsthanks:
     path: /mintsthanks
     defaults: { _controller: ShopBundle:Mintsthanks:new }
+wallet:
+    path: /wallet
+    defaults: { _controller: ShopBundle:Wallet:index }

@@ -1,0 +1,5 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+Witaj {{ user_details[0].username }}, na koncie masz {{ user_details[0].money }} HolyCoinów!
+<a href="{{ path('ordersmints') }}">Kup HolyCoiny smsem!</a>
+{% endblock %}

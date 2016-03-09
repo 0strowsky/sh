@@ -54,10 +54,10 @@
                 <img src="http://portal.holyshit.pl/images/ikonki/regulamin.png" width="12px"/>
                 Regulaminy</a>
                                     {% if app.user %}
-                                    <a href="/sh/web/app_dev.php/profile">|&nbsp;Moje konto</a>
+                                    <a href="{{ path('wallet') }}">|&nbsp;Portfel</a>
                                     {% else %}     
-                                    <a href="/sh/web/app_dev.php/register">|&nbsp;Zarejestruj się</a>
-                                    <a href="/sh/web/app_dev.php/login">|&nbsp;Zaloguj</a>
+                                    <a href="{{ path('register') }}">|&nbsp;Zarejestruj się</a>
+                                    <a href="{{ path('login') }}">|&nbsp;Zaloguj</a>
                                     {% endif %}                            
             </div>
             <div style=clear:both></div>

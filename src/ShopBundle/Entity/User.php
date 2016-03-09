@@ -25,6 +25,12 @@ class User extends BaseUser
     */
     public $steam_id;
 
+    /**
+    * @var integer
+    * @ORM\Column(name="money", type="integer", options={"default" = 0}, nullable=true)
+    */
+    public $money;
+
     public function __construct()
     {
         parent::__construct();
