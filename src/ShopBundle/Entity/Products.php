@@ -31,16 +31,38 @@ class Products
     /**
      * @var string
      *
+     * @ORM\Column(name="display_name", type="string", length=255)
+     */
+    private $display_name;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="category", type="string", length=255)
      */
     private $category;
 
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="categorypath", type="string", length=255)
+     */
+    private $categorypath;
+
+
     /**
+     * @var string
+     *
+     * @ORM\Column(name="price", type="string")
+     */
+    private $price;
+
+      /**
      * @var int
      *
-     * @ORM\Column(name="quantity", type="integer")
+     * @ORM\Column(name="duration", type="integer")
      */
-    private $quantity;
+    private $duration;
 
     /**
      * @var string
@@ -56,6 +78,17 @@ class Products
      */
     private $img;
 
+    /**
+    * @var string
+    * @ORM\Column(name="img_min", type="string", length=255) 
+    */
+    private $img_min;
+
+    /**
+    * @var string
+    * @ORM\Column(name="phonenumber", type="string", length=255)
+    */
+    private $phonenumber;
 
     /**
      * Get id
@@ -116,27 +149,27 @@ class Products
     }
 
     /**
-     * Set quantity
+     * Set price
      *
-     * @param integer $quantity
+     * @param string $price
      *
      * @return Products
      */
-    public function setQuantity($quantity)
+    public function setPrice($price)
     {
-        $this->quantity = $quantity;
+        $this->price = $price;
 
         return $this;
     }
 
     /**
-     * Get quantity
+     * Get price
      *
-     * @return int
+     * @return string
      */
-    public function getQuantity()
+    public function getPrice()
     {
-        return $this->quantity;
+        return $this->price;
     }
 
     /**
@@ -186,5 +219,122 @@ class Products
     {
         return $this->img;
     }
-}
 
+  /**
+     * Set display_name
+     *
+     * @param string $display_name
+     *
+     * @return Products
+     */
+    public function setDisplayName($display_name)
+    {
+        $this->display_name = $display_name;
+
+        return $this;
+    }
+
+    /**
+     * Get display_name
+     *
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+      /**
+     * Set duration
+     *
+     * @param int $duration
+     *
+     * @return Products
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Get duration
+     *
+     * @return duration
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+          /**
+     * Set img_min
+     *
+     * @param string $img_min
+     *
+     * @return Products
+     */
+    public function setImgMin($img_min)
+    {
+        $this->img_min = $img_min;
+
+        return $this;
+    }
+
+    /**
+     * Get img_min
+     *
+     * @return img_min
+     */
+    public function getImgMin()
+    {
+        return $this->img_min;
+    }
+        /**
+     * Set categorypath
+     *
+     * @param string $categorypath
+     *
+     * @return Products
+     */
+    public function setCategorypath($categorypath)
+    {
+        $this->categorypath = $categorypath;
+
+        return $this;
+    }
+
+    /**
+     * Get categorypath
+     *
+     * @return string
+     */
+    public function getCategorypath()
+    {
+        return $this->categorypath;
+    }
+      /**
+     * Set phonenumber
+     *
+     * @param string $phonenumber
+     *
+     * @return Products
+     */
+    public function setPhonenumber($phonenumber)
+    {
+        $this->phonenumber = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phonenumber
+     *
+     * @return string
+     */
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
+    }
+
+}

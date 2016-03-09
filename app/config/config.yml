@@ -73,8 +73,8 @@ fos_user:
     firewall_name: main
     user_class: ShopBundle\Entity\User
     registration:
-        confirmation:
-            enabled: true
+        form:
+            type: ShopBundle\Form\RegistrationType
 payum:
     security:
         token_storage:

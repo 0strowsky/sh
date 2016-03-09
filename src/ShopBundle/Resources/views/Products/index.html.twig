@@ -1,16 +1,13 @@
 {% extends '::base.html.twig' %}
 {% block content %}
+{{ products[0].name }}
+<a href="{{ products[0].name }}/ordersmints">ZAMÓW MINTSHOSTEM</a><br>
+<a href="{{ products[0].name }}/orders">ZAMÓW PRZELEWEM</a>
+{% endblock %}
+{% block categories %}
+{% for categories2 in categories2 %}
+{% set var = categories2.categorypath %}
+<li><a href="/sh/web/app_dev.php/category/{{ var }}"><i class="fa fa-angle-double-right"></i> {{ categories2.category }}</a></li>
+{% endfor %}
 
-{% set prodid = app.request.attributes.get('slug') -1 %}
-{% set arrayval = products[prodid].id %}
-	
-{% if products|length > prodid %}
-rak
-{% else %}
-chuj
-{% endif %}
-{{ arrayval }}
-<img src="{{ products[prodid].img }}">
-{{ products[prodid].description }}
-<a href="{{ prodid +1 }}/order">Zamów!</a>
 {% endblock %}

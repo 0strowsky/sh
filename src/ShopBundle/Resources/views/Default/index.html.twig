@@ -2,12 +2,12 @@
 {% block content %}
 {% endblock %}
 {% block slider %}
-<img width="100%" style="border-radius:4px;" class="hidden-xs" src="{{ asset('slider.png') }}"/>
+TU BĘDZIE KONTENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {% endblock %}
 {% block categories %}
-{% for categories in categories %}
-{% set var = categories.category %}
-<li><a href="/sh/web/app_dev.php/category/{{ var|lower }}"><i class="fa fa-angle-double-right"></i> {{ categories.category }}</a></li>
+{% for categories2 in categories2 %}
+{% set var = categories2.categorypath %}
+<li><a href="/sh/web/app_dev.php/category/{{ var }}"><i class="fa fa-angle-double-right"></i> {{ categories2.category }}</a></li>
 {% endfor %}
 
 {% endblock %}
@@ -18,10 +18,10 @@
 <div class="row">
 {% for categories in categories %}
 <div class="col-md-3">
-<a href="/sh/web/app_dev.php/products/{{ categories.id }}">
-{{ categories.name }}
+<a href="/sh/web/app_dev.php/products/{{ categories.name }}">
+{{ categories.display_name }}
 
-<img src="{{categories.img}}" style="width:150px">
+<img src="{{categories.img_min}}" style="width:150px">
 </a></div>
 {% endfor %}
 </div></div>
