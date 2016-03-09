@@ -6,12 +6,14 @@ use ShopBundle\Entity\Mintsorders;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
 class OrdersmintsController extends Controller
 {
     public function newAction(Request $request)
-    {
+    {   
+        $failed = "";
         $user = $this->getUser();
         $userId = $user->getId();
         // 
@@ -19,7 +21,7 @@ class OrdersmintsController extends Controller
         $orders->setUserId($userId);
         $form = $this->createFormBuilder($orders)
             ->add('userId', 'hidden')
-            ->add('numer',ChoiceType::class, array(
+            ->add('numer', ChoiceType::class, array(
                 'choices' => array(
                     '7136(1.23zł)' => '7136',
                     '7255(2.46zł)' => '7255',
@@ -33,33 +35,53 @@ class OrdersmintsController extends Controller
                     '92555(30.75zł)' => '92555'
                     )))
             ->add('kod', 'text')
-            ->add('date', 'date')
-            ->add('save', 'submit')
+            ->add('Kup', 'submit')
             ->getForm();
-
-
         $form->handleRequest($request);
-          
 
-    if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
-            $numer = $data->numer;
+        if ($form->isSubmitted() && $form->isValid()) {
+                $data = $form->getData();
+                $numer = $data->numer;
+                $kod = $data->kod;
+                
+                   // create curl resource
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL,"http://mintshost.pl/sms.php?kod=".$kod."&sms=".$numer."&email=blackdmail8@gmail.com");
+
+                       //return the transfer as a string
+                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                       // $output contains the output string
+                  $output = curl_exec($ch);
+                       // close curl resource to free up system resources
+                  curl_close($ch);
+
+
+                switch($output){
+                case 0:
+                 $failed = "Kod, który wprowadziłeś jest niepoprawny!";
+                 break;
+                case 1:
+                $mintsorders = new Mintsorders();
+                    $mintsorders->setUserId($userId);
+                    $mintsorders->setNumer($numer);
+                    $mintsorders->setKod($kod);
+                    $mintsorders->setDate(date("Y-m-d h:i:sa"));
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($mintsorders);
+                    $em->flush();
+                return $this->redirectToRoute('mintsthanks');
+                 break;
+                case 3:
+                 $failed = "Kod nie został wprowadzony";
+                 break;
+                }
+
+
+                
             
+        }
 
-            $mintsorders = new Mintsorders();
-            $mintsorders->setUserId($userId);
-            $mintsorders->setNumer($kod);
-            $mintsorders->setKod('ge');
-            $mintsorders->setDate('2015-04-12');
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($mintsorders);
-            $em->flush();
-        return $this->redirectToRoute('mintsthanks');
-        
-    }
-
-   return $this->render('ShopBundle:Ordersmints:new.html.twig', array('form' => $form->createView()));  
+   return $this->render('ShopBundle:Ordersmints:new.html.twig', array('form' => $form->createView(), 'failed' => $failed));  
 
 
         

@@ -40,14 +40,14 @@ class Mintsorders
      *
      * @ORM\Column(name="kod", type="string", length=255)
      */
-    private $kod;
+    public $kod;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="string", length=255)
      */
-    private $date;
+    public $date;
 
 
     /**
