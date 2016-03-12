@@ -1,8 +1,12 @@
 {% extends '::base.html.twig' %}
 {% block categories %}
 {% for categories2 in categories2 %}
-{% set var = categories2.categorypath %}
-<li><a href="/sh/web/app_dev.php/category/{{ var }}"><i class="fa fa-angle-double-right"></i> {{ categories2.categorypath }}</a></li>
+<li class="has-sub"><a href="#">{{ categories2.mother }} </a>
+                            <ul>
+                                <li><a href="/sh/web/app_dev.php/category/{{ categories2.categorypath }}">{{ categories2.category }}</a></li>
+
+                            </ul></li>
+                       
 {% endfor %}
 
 {% endblock %}
@@ -12,7 +16,7 @@
 <div class="row">
 {% for categories in categories %}
 <div class="col-md-3">
-<a href="/sh/web/app_dev.php/products/{{ categories.id }}">
+<a href="/sh/web/app_dev.php/products/{{ categories.name }}">
 {{ categories.display_name }}
 
 <img src="{{categories.img_min}}" style="width:150px">
