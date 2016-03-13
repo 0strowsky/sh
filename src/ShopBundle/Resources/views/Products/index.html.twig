@@ -8,7 +8,11 @@ opis naszego produktu {{ products[0].description }}<br>
 ładna nazwa naszego produktu {{ products[0].display_name }}<br>
 czas trwania naszej usługi {{ products[0].duration }}<br>
 obrazek naszej usługi {{ products[0].img }}<br>
-</div> {{ form(form) }}
+</div> {% if app.user %}
+{{ form(form) }}
+{% else %}
+ABY DOKONAĆ ZAKUPU TO SIĘ ZALOGUJ 
+{% endif %}
 {% endblock %}
 {% block categories %}
 
