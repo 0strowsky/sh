@@ -36,4 +36,27 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+     /**
+     * Set money
+     *
+     * @param string $money
+     *
+     * @return User
+     */
+    public function setMoney($money)
+    {
+        $this->money = $money;
+
+        return $this;
+    }
+
+    /**
+     * Get money
+     *
+     * @return string
+     */
+    public function getMoney()
+    {
+        return $this->money;
+    }
 }

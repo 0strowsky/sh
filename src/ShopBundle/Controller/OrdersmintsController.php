@@ -14,10 +14,15 @@ class OrdersmintsController extends Controller
 {
     public function newAction(Request $request)
     {   
+        
+                    
         $failed = "";
         $user = $this->getUser();
         $userId = $user->getId();
         // 
+        $rm = $this->getDoctrine()->getManager();
+                    $query2 = $rm->createQuery('SELECT a.money FROM ShopBundle:User a WHERE a.id = :id')->setParameter('id', $userId);
+                    $actualvalue = $query2->getResult();
         $orders = new Mintsorders();
         $orders->setUserId($userId);
         $form = $this->createFormBuilder($orders)
@@ -59,18 +64,26 @@ class OrdersmintsController extends Controller
 
                 switch($output){
                 case 0:
-                 $failed = "Kod, który wprowadziłeś jest niepoprawny!";
-                 break;
-                case 1:
-                $mintsorders = new Mintsorders();
+                    
+
+       
+
+                    $mintsorders = new Mintsorders();
                     $mintsorders->setUserId($userId);
                     $mintsorders->setNumer($numer);
                     $mintsorders->setKod($kod);
                     $mintsorders->setDate(date("Y-m-d h:i:sa"));
+                  
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($mintsorders);
                     $em->flush();
+
+
                 return $this->redirectToRoute('mintsthanks');
+                
+                 break;
+                case 1:
+        $failed = "Kod, który wprowadziłeś jest niepoprawny!";
                  break;
                 case 3:
                  $failed = "Kod nie został wprowadzony";
@@ -82,7 +95,7 @@ class OrdersmintsController extends Controller
             
         }
 
-   return $this->render('ShopBundle:Ordersmints:new.html.twig', array('form' => $form->createView(), 'failed' => $failed));  
+   return $this->render('ShopBundle:Ordersmints:new.html.twig', array('form' => $form->createView(), 'failed' => $failed, 'actualvalue' => $actualvalue));  
 
 
         

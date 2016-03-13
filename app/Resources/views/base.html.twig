@@ -55,9 +55,11 @@
                 Regulaminy</a>
                                     {% if app.user %}
                                     <a href="{{ path('wallet') }}">|&nbsp;Portfel</a>
+                                    <a href="/sh/web/app_dev.php/logout">Wyloguj się</a>
                                     {% else %}     
                                     <a href="/sh/web/app_dev.php/register">|&nbsp;Zarejestruj się</a>
                                     <a href="/sh/web/app_dev.php/login">|&nbsp;Zaloguj</a>
+
                                     {% endif %}                            
             </div>
             <div style=clear:both></div>

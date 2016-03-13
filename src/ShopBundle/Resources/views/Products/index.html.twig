@@ -1,7 +1,14 @@
 {% extends '::base.html.twig' %}
 {% block content %}
-
-
+<div style="color:white">
+kategoria(do breadcrumba?){{ products[0].category}}<br>
+to jest produkt {{ products[0].name }}<br>
+KOSZTUJE: {{ products[0].price }}<br>
+opis naszego produktu {{ products[0].description }}<br>
+ładna nazwa naszego produktu {{ products[0].display_name }}<br>
+czas trwania naszej usługi {{ products[0].duration }}<br>
+obrazek naszej usługi {{ products[0].img }}<br>
+</div>
 {% endblock %}
 {% block categories %}
 
@@ -16,3 +23,5 @@
 
 
 {% endblock %}
+
+
