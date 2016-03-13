@@ -17,12 +17,9 @@ class OrdersmintsController extends Controller
         
                     
         $failed = "";
-        $user = $this->getUser();
-        $userId = $user->getId();
-        // 
-        $rm = $this->getDoctrine()->getManager();
-                    $query2 = $rm->createQuery('SELECT a.money FROM ShopBundle:User a WHERE a.id = :id')->setParameter('id', $userId);
-                    $actualvalue = $query2->getResult();
+        $user123 = $this->getUser();
+        $userId = $user123->getId();
+
         $orders = new Mintsorders();
         $orders->setUserId($userId);
         $form = $this->createFormBuilder($orders)
@@ -64,9 +61,49 @@ class OrdersmintsController extends Controller
 
                 switch($output){
                 case 0:
-                    
+                $failed = "Kod, który wprowadziłeś jest niepoprawny!";
+                break;
+                case 1:
+                 $em = $this->getDoctrine()->getManager();
+                    $user = $em->getRepository('ShopBundle:User')->find($userId);
 
-       
+                    if (!$user) {
+                        throw $this->createNotFoundException(
+                            'Nie masz praw, by tu wchodzić, 403 kurwa');
+                                }
+                    $usermoney = $user->getMoney();
+
+                    if($numer == '7136'){
+                        $user->setMoney($usermoney + '123');
+                        $em->flush();
+                    }else if($numer == '7255'){
+                        $user->setMoney($usermoney + '246');
+                        $em->flush();
+                    }else if($numer == '7355'){
+                        $user->setMoney($usermoney + '369');
+                        $em->flush();
+                    }else if($numer == '7455'){
+                        $user->setMoney($usermoney + '492');
+                        $em->flush();
+                    }else if($numer == '7555'){
+                        $user->setMoney($usermoney + '615');
+                        $em->flush();
+                    }else if($numer == '7636'){
+                        $user->setMoney($usermoney + '738');
+                        $em->flush();
+                    }else if($numer == '7936'){
+                        $user->setMoney($usermoney + '1107');
+                        $em->flush();
+                    }else if($numer == '91455'){
+                        $user->setMoney($usermoney + '1722');
+                        $em->flush();
+                    }else if($numer == '91955'){
+                        $user->setMoney($usermoney + '2337');
+                        $em->flush();
+                    }else if($numer == '92555'){
+                        $user->setMoney($usermoney + '3075');
+                        $em->flush();
+                    }  
 
                     $mintsorders = new Mintsorders();
                     $mintsorders->setUserId($userId);
@@ -78,26 +115,15 @@ class OrdersmintsController extends Controller
                     $em->persist($mintsorders);
                     $em->flush();
 
-
                 return $this->redirectToRoute('mintsthanks');
-                
-                 break;
-                case 1:
-        $failed = "Kod, który wprowadziłeś jest niepoprawny!";
-                 break;
+                break;
+
                 case 3:
-                 $failed = "Kod nie został wprowadzony";
-                 break;
-                }
 
-
-                
-            
+                    $failed = "Kod nie został wprowadzony";
+                break;
+                } 
         }
 
-   return $this->render('ShopBundle:Ordersmints:new.html.twig', array('form' => $form->createView(), 'failed' => $failed, 'actualvalue' => $actualvalue));  
-
-
-        
-
+    return $this->render('ShopBundle:Ordersmints:new.html.twig', array('form' => $form->createView(), 'failed' => $failed, ));  
 }};

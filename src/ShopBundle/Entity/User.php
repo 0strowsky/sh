@@ -26,8 +26,8 @@ class User extends BaseUser
     public $steam_id;
 
     /**
-    * @var integer
-    * @ORM\Column(name="money", type="integer", options={"default" = 0}, nullable=true)
+    * @var string
+    * @ORM\Column(name="money", type="string", nullable=true)
     */
     public $money;
 
@@ -59,4 +59,6 @@ class User extends BaseUser
     {
         return $this->money;
     }
+
+
 }
