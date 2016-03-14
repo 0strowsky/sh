@@ -1,9 +1,9 @@
 {% extends '::base.html.twig' %}
 {% block content %}
 {% if app.user %}
-Potwierdź chęć zakupu {{ nazwaproduktu[0] }}
+Kupiłeś.
 {% else %}
 Nie jesteś zalogowany, więc nie możesz przeglądać tej strony
 {% endif %}
-{{ form(form) }}
+
 {% endblock %}

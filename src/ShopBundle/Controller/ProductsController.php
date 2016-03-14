@@ -51,5 +51,9 @@ class ProductsController extends Controller
          }
   		return $this->render('ShopBundle:Products:index.html.twig', array('slug' => $slug, 'products' => $products, 'categories2' => $categories2, 'form' => $form->createView()));
       }
+   public function showAction(Request $request)
+   {
+      return $this->render('ShopBundle:Products:show.html.twig');
+   }
 
 }
