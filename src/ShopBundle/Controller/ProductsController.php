@@ -37,14 +37,19 @@ class ProductsController extends Controller
 
          $productform = new Products();
          $form = $this->createFormBuilder($productform)
-         ->add('Kup', ButtonType::class, array (
-            'attr' => array('class' => 'Kup'),
-            ))
+         ->add('Kup', 'submit')
          ->getForm();
+
          $form->handleRequest($request);
 
+         if ($form->isSubmitted() && $form->isValid()) {
 
+            return $this->redirectToRoute('confirmation');
+
+         }
+
+         }
   		return $this->render('ShopBundle:Products:index.html.twig', array('slug' => $slug, 'products' => $products, 'categories2' => $categories2, 'form' => $form->createView()));
       }
-   }
+
 }
