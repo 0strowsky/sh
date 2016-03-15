@@ -1,13 +1,31 @@
 {% extends '::base.html.twig' %}
 {% block content %}
-{{ products[0].name }}
-<a href="{{ products[0].name }}/ordersmints">ZAMÓW MINTSHOSTEM</a><br>
-<a href="{{ products[0].name }}/orders">ZAMÓW PRZELEWEM</a>
+<div style="color:white">
+kategoria(do breadcrumba?){{ products[0].category}}<br>
+to jest produkt {{ products[0].name }}<br>
+KOSZTUJE: {{ products[0].price }}<br>
+opis naszego produktu {{ products[0].description }}<br>
+ładna nazwa naszego produktu {{ products[0].display_name }}<br>
+czas trwania naszej usługi {{ products[0].duration }}<br>
+obrazek naszej usługi {{ products[0].img }}<br>
+</div> {% if app.user %}
+{{ form(form) }}
+{% else %}
+ABY DOKONAĆ ZAKUPU TO SIĘ ZALOGUJ 
+{% endif %}
 {% endblock %}
 {% block categories %}
+
 {% for categories2 in categories2 %}
-{% set var = categories2.categorypath %}
-<li><a href="/sh/web/app_dev.php/category/{{ var }}"><i class="fa fa-angle-double-right"></i> {{ categories2.category }}</a></li>
+<li class="has-sub"><a href="#">{{ categories2.mother }} </a>
+                            <ul>
+                                <li><a href="/sh/web/app_dev.php/category/{{ categories2.categorypath }}">{{ categories2.category }}</a></li>
+
+                            </ul></li>
+                       
 {% endfor %}
 
+
 {% endblock %}
+
+

@@ -25,9 +25,40 @@ class User extends BaseUser
     */
     public $steam_id;
 
+    /**
+    * @var string
+    * @ORM\Column(name="money", type="string", nullable=true)
+    */
+    public $money;
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
     }
+     /**
+     * Set money
+     *
+     * @param string $money
+     *
+     * @return User
+     */
+    public function setMoney($money)
+    {
+        $this->money = $money;
+
+        return $this;
+    }
+
+    /**
+     * Get money
+     *
+     * @return string
+     */
+    public function getMoney()
+    {
+        return $this->money;
+    }
+
+
 }

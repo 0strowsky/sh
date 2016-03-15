@@ -86,9 +86,10 @@ class Products
 
     /**
     * @var string
-    * @ORM\Column(name="phonenumber", type="string", length=255)
+    * @ORM\Column(name="mother", type="string", length=255) 
     */
-    private $phonenumber;
+    private $mother;
+
 
     /**
      * Get id
@@ -313,28 +314,30 @@ class Products
     {
         return $this->categorypath;
     }
-      /**
-     * Set phonenumber
+
+    /**
+     * Set mother
      *
-     * @param string $phonenumber
+     * @param string $mother
      *
      * @return Products
      */
-    public function setPhonenumber($phonenumber)
+    public function setMother($mother)
     {
-        $this->phonenumber = $phonenumber;
+        $this->mother = $mother;
 
         return $this;
     }
 
     /**
-     * Get phonenumber
+     * Get mother
      *
      * @return string
      */
-    public function getPhonenumber()
+    public function getMother()
     {
-        return $this->phonenumber;
+        return $this->mother;
     }
+
 
 }
