@@ -12,8 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Ijanki\Bundle\FtpBundle\Exception\FtpException;
 
 class ProductsController extends Controller
-{ 
-
+{
    public function indexAction(Request $request, $slug)
    {     
          $failed = "";
@@ -25,6 +24,7 @@ class ProductsController extends Controller
          $query = $em->createQuery('SELECT DISTINCT a.id, a.category, a.name, a.price, a.img, a.description, a.display_name, a.duration FROM ShopBundle:Products a WHERE a.name = :name')->setParameter('name', $slug);
          $products = $query->getResult();
          var_dump($products);
+		 
 
          $userinho = $this->getUser();
          if($userinho == NULL){
@@ -34,7 +34,8 @@ class ProductsController extends Controller
          $km = $this->getDoctrine()->getManager();
          $query3 = $km->createQuery('SELECT a.money FROM ShopBundle:User a WHERE a.id =:id')->setParameter('id', $userId);
          $money_value = $query3->getResult();
-
+		
+		 
    		
 
          $productform = new Products();
@@ -46,35 +47,37 @@ class ProductsController extends Controller
 
          if ($form->isSubmitted() && $form->isValid()) {
 
-            return $this->redirectToRoute('confirmation');
+				$failed = "";
+				$lm = $this->getDoctrine()->getManager();
+				$user = $lm->getRepository('ShopBundle:User')->find($userId);
+				$usermoney = $user->getMoney();
+				 
+				 if ($usermoney >=  $money_value[0]["money"]) {
+				 $user->setMoney($usermoney - $products[0]["price"]);
+				 $order = new Orders();
+				 $order->setUserId($userId);
+				 $order->setDate(new \DateTime("now"));
+				 $order->setProductId(5);
 
-         }
+				 $em = $this->getDoctrine()->getManager();
+				 $em->persist($order);
+				 $em->flush();
+					
+				 try {
+					$ftp = $this->container->get('ijanki_ftp');
+					$ftp->connect('195.64.158.32');
+					$ftp->login('test', 'xancik123');
+					print_r('sukces kurwa');
+				 } catch (FtpException $e) {
+					echo 'Błąd: ', $e->getMessage();
+				 }
+				 } else {
+					 $failed = 'Niestety, nie masz wystarczającej ilości HolyCoinów! Najpierw doładuj swój portfel!';
+				 }
 
-         }
+        }
+
+    }
   		return $this->render('ShopBundle:Products:index.html.twig', array('slug' => $slug, 'products' => $products, 'categories2' => $categories2, 'form' => $form->createView()));
       }
-   public function showAction(Request $request)
-   {
-         $username = $this->getUser();
-         $userId = $username->getId();
-         $order = new Orders();
-         $order->setUserId($userId);
-         $order->setDate(new \DateTime("now"));
-         $order->setProductId(5);
-
-         $em = $this->getDoctrine()->getManager();
-         $em->persist($order);
-         $em->flush();
-      
-         try {
-            $ftp = $this->container->get('ijanki_ftp');
-            $ftp->connect('195.64.158.32');
-            $ftp->login('test', 'xancik123');
-            print_r('sukces kurwa');
-         } catch (FtpException $e) {
-            echo 'Błąd: ', $e->getMessage();
-         }
-      return $this->render('ShopBundle:Products:show.html.twig');
-   }
-
 }
