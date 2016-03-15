@@ -25,6 +25,3 @@ mintsthanks:
 wallet:
     path: /wallet
     defaults: { _controller: ShopBundle:Wallet:index }
-confirmation:
-    path: /potwierdzenie
-    defaults: { _controller: ShopBundle:Products:show }
