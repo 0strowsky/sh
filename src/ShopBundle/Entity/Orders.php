@@ -29,14 +29,21 @@ class Orders
     private $userId;
 
     /**
+    * @var int
+    *
+    * @ORM\Column(name="product_id", type="integer")
+    */
+    private $product_id;
+
+    /**
      * @var datetime
      *
-     * @ORM\Column(name="date", type="datetime", length=255)
+     * @ORM\Column(name="date", type="datetime")
      */
     private $date;
 
 
-    protected $dueDate;
+
 
     /**
      * Get id
@@ -94,6 +101,29 @@ class Orders
     public function getDate()
     {
         return $this->date;
+    }
+    /**
+     * Set product_id
+     *
+     * @param string $product_id
+     *
+     * @return Orders
+     */
+    public function setProductId($product_id)
+    {
+        $this->product_id = $product_id;
+
+        return $this;
+    }
+
+    /**
+     * Get product_id
+     *
+     * @return string
+     */
+    public function getProductId()
+    {
+        return $this->product_id;
     }
 }
 

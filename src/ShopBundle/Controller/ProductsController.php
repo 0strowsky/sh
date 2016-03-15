@@ -14,7 +14,7 @@ class ProductsController extends Controller
 
    public function indexAction(Request $request, $slug)
    {     
-         
+         $failed = "";
          $rm = $this->getDoctrine()->getManager();
          $query2 = $rm->createQuery('SELECT DISTINCT a.categorypath, a.category, a.mother FROM ShopBundle:Products a');
          $categories2 = $query2->getResult();
@@ -53,6 +53,13 @@ class ProductsController extends Controller
       }
    public function showAction(Request $request)
    {
+
+      $username = $this->getUser();
+      if( isset($username)){
+         $failed = "Niestety, nie jesteś zalogowany"
+      }else{
+         $
+      }
       return $this->render('ShopBundle:Products:show.html.twig');
    }
 
